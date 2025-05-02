@@ -1,0 +1,564 @@
+/* Add these to your existing style.css */
+
+/* Service Pages */
+.service-main {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.service-hero .hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+.service-hero .hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #7f8c8d;
+}
+
+.service-hero .hero-image {
+    margin-top: 2rem;
+}
+
+/* Post Form */
+.post-form-container {
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 3rem;
+    display: none;
+}
+
+.post-form-container h2 {
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+}
+
+.post-form {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #34495e;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.submit-btn, .cancel-btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn {
+    background-color: #3498db;
+    color: white;
+}
+
+.submit-btn:hover {
+    background-color: #2980b9;
+}
+
+.cancel-btn {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.cancel-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Posts Section */
+.posts-section h2 {
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+}
+
+.filter-controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.filter-controls select {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    min-width: 200px;
+}
+
+.posts-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.post-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.post-header {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #2c3e50;
+}
+
+.post-category {
+    background-color: #3498db;
+    color: white;
+    padding: 0.3rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.post-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.post-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.post-card:hover .post-image img {
+    transform: scale(1.05);
+}
+
+.post-content {
+    padding: 1rem;
+}
+
+.post-content p {
+    margin: 0;
+    color: #7f8c8d;
+    line-height: 1.5;
+}
+
+.post-footer {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #eee;
+    font-size: 0.9rem;
+    color: #95a5a6;
+}
+
+.post-actions {
+    padding: 0 1rem 1rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.action-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact-btn {
+    background-color: #3498db;
+    color: white;
+}
+
+.contact-btn:hover {
+    background-color: #2980b9;
+}
+
+.save-btn {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.save-btn:hover {
+    background-color: #27ae60;
+}
+
+.no-posts {
+    text-align: center;
+    grid-column: 1 / -1;
+    padding: 2rem;
+    color: #7f8c8d;
+}
+
+/* Property and Vehicle Specific Styles */
+.property-card .post-price,
+.vehicle-card .post-price {
+    background-color: #2ecc71;
+    color: white;
+    padding: 0.3rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 0.5rem;
+}
+
+.amenities-grid label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.image-preview {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.image-preview img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Contact Page Styles */
+.contact-main {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-hero {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+.contact-hero p {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.contact-form-container {
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.contact-form-container h2 {
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+}
+
+.contact-info-container {
+    background-color: #2c3e50;
+    padding: 2rem;
+    border-radius: 10px;
+    color: white;
+}
+
+.contact-info-container h2 {
+    margin-bottom: 1.5rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.info-item i {
+    font-size: 1.2rem;
+    margin-top: 0.2rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: rgba(255,255,255,0.2);
+    transform: translateY(-3px);
+}
+
+/* Chatbot Styles */
+.chatbot-toggle {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.chatbot-toggle:hover {
+    background-color: #2980b9;
+    transform: scale(1.1);
+}
+
+.chatbot-widget {
+    position: fixed;
+    bottom: 8rem;
+    right: 2rem;
+    width: 350px;
+    height: 500px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+    display: none;
+    flex-direction: column;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.chatbot-header {
+    padding: 1rem;
+    background-color: #3498db;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chatbot-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.chatbot-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.chatbot-messages {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.chatbot-message {
+    max-width: 80%;
+    padding: 0.8rem 1rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.chatbot-message.bot {
+    align-self: flex-start;
+    background-color: #f1f1f1;
+    color: #333;
+    border-bottom-left-radius: 5px;
+}
+
+.chatbot-message.user {
+    align-self: flex-end;
+    background-color: #3498db;
+    color: white;
+    border-bottom-right-radius: 5px;
+}
+
+.chatbot-input {
+    padding: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    border-top: 1px solid #eee;
+}
+
+.chatbot-input input {
+    flex: 1;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.chatbot-send {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Button Styles */
+.styled-btn {
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.edit-btn-style {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+.edit-btn-style:hover {
+    background-color: #45a049;
+}
+
+.delete-btn-style {
+    background-color: #f44336; /* Red */
+    color: white;
+}
+
+.delete-btn-style:hover {
+    background-color: #d32f2f;
+}
+
+.contact-btn-style {
+    background-color: #2196F3; /* Blue */
+    color: white;
+}
+
+.contact-btn-style:hover {
+    background-color: #1976D2;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .chatbot-widget {
+        width: calc(100% - 2rem);
+        right: 1rem;
+        bottom: 6rem;
+    }
+    
+    .post-form-container {
+        padding: 1rem;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .posts-container {
+        grid-template-columns: 1fr;
+    }
+}
