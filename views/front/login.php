@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-// Traitement de la connexion
+// Traitement de la connexion classique
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
     try {
         $pdo = new PDO('mysql:host=localhost;dbname=clyptorweb;charset=utf8mb4', 'root', '', [
@@ -28,8 +28,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
         $loginError = "Database error: " . $e->getMessage();
     }
 }
-?>
 
+// Facebook et GitHub config
+$facebookAppId = 'YOUR_FACEBOOK_APP_ID';
+$facebookRedirect = urlencode('http://localhost/wahdi/facebook_callback.php');
+
+$githubClientId = 'YOUR_GITHUB_CLIENT_ID';
+$githubRedirect = urlencode('http://localhost/wahdi/github_callback.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
       <!-- Social Login Buttons -->
       <div style="text-align: center; margin-top: 20px;">
         <!-- Facebook -->
-        <a href="https://www.facebook.com/v11.0/dialog/oauth?client_id=YOUR_FACEBOOK_APP_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code" target="_blank">
+        <a href="https://www.facebook.com/v11.0/dialog/oauth?client_id=<?= $facebookAppId ?>&redirect_uri=<?= $facebookRedirect ?>&response_type=code&scope=email">
           <div class="social-btn" style="background-color: #3b5998; color: white; display: inline-flex; align-items: center; padding: 10px 20px; margin: 5px; border-radius: 4px;">
             <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" style="height: 20px; margin-right: 10px;" />
             <span>Login with Facebook</span>
@@ -75,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
         </a>
 
         <!-- GitHub -->
-        <a href="https://github.com/login/oauth/authorize?client_id=YOUR_GITHUB_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI" target="_blank">
+        <a href="https://github.com/login/oauth/authorize?client_id=<?= $githubClientId ?>&redirect_uri=<?= $githubRedirect ?>&scope=user:email">
           <div class="social-btn" style="background-color: #333; color: white; display: inline-flex; align-items: center; padding: 10px 20px; margin: 5px; border-radius: 4px;">
             <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub Logo" style="height: 20px; margin-right: 10px;" />
             <span>Login with GitHub</span>
@@ -84,7 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
       </div>
     </form>
 
-    <!-- Register Form (Hidden by default) -->
+    <!-- Register Form -->
     <form id="register-form" method="POST" action="register.php" style="display: none;">
       <input type="text" name="username" placeholder="Username" required />
       <input type="email" name="email" placeholder="Email" required />
