@@ -11,12 +11,28 @@ class ComposerStaticInitd4fb758ce07a1e1b7b60b809e775e8c0
         array (
             'Twilio\\' => 7,
         ),
+        'P' => 
+        array (
+            'PHPMailer\\PHPMailer\\' => 20,
+        ),
+        'F' => 
+        array (
+            'Facebook\\' => 9,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
         'Twilio\\' => 
         array (
             0 => __DIR__ . '/..' . '/twilio/sdk/src/Twilio',
+        ),
+        'PHPMailer\\PHPMailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
+        ),
+        'Facebook\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/facebook/graph-sdk/src/Facebook',
         ),
     );
 

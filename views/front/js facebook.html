@@ -1,0 +1,13 @@
+<script async defer crossorigin="anonymous" 
+    src="https://connect.facebook.net/fr_FR/sdk.js"></script>
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '1261250658752853', // Remplacez par l'ID de votre application Facebook
+            cookie     : true,
+            xfbml      : true,
+            version    : 'v15.0' // Utilisez la version actuelle de l'API
+        });
+        FB.AppEvents.logPageView();
+    };
+</script>

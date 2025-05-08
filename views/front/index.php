@@ -197,6 +197,28 @@ $page_title = "Home";
     .auth-buttons {
         display: flex;
         gap: clamp(0.5rem, 2vw, 1rem);
+        align-items: center;
+    }
+    
+    .profile-link {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        background-color: var(--primary);
+        color: var(--white);
+        transition: all 0.3s ease;
+        font-weight: 600;
+    }
+    
+    .profile-link:hover {
+        background-color: var(--primary-dark);
+        transform: translateY(-2px);
+    }
+    
+    .profile-link i {
+        font-size: 1.2rem;
     }
     
     .mobile-menu-toggle {
@@ -859,8 +881,12 @@ $page_title = "Home";
             
             <div class="auth-buttons">
                 <?php if (isset($_SESSION['user_id'])): ?>
-                    <button onclick="window.location.href='../back/user/user-info.php'" class="btn btn-primary">Dashboard</button>
-                    <button onclick="window.location.href='logout.php'" class="btn btn-outline">Log Out</button>
+                    <a href="profile.php" class="profile-link">
+                        <i class="fas fa-user"></i>
+                        <?php echo htmlspecialchars($_SESSION['username']); ?>
+                    </a>
+                    <a href="dashboard.php" class="btn btn-primary">Dashboard</a>
+                    <a href="logout.php" class="btn btn-outline">Log Out</a>
                 <?php else: ?>
                     <a href="login.php" class="btn btn-outline">Login</a>
                     <a href="register.php" class="btn btn-primary">Register</a>
@@ -1031,3 +1057,5 @@ $page_title = "Home";
     </script>
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+</body>
+</html>
